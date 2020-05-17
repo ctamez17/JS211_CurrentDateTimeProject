@@ -16,16 +16,16 @@ const displayDate = () => {
 
 // Write a JavaScript program to convert a number to a string.
 const displayString = () => {
-  var num = 15;
-  var n = num.toString();
+  let num = 15;
+  let n = num.toString();
   document.getElementById("display-string").innerHTML = n;
   
 }
 
-// Write a JavaScript program to convert a string to the number.
+// Write a JavaScript program to convert a string to a number.
 const displayNumber = () => {
-  var word = "42"
-  var w = parseInt(word, 10)
+  let word = "42";
+  let w = parseInt(word, 10);
   document.getElementById("display-number").innerHTML = w;
 }
 
@@ -38,53 +38,59 @@ const displayNumber = () => {
   // * NaN
   // * String
 
-const dataType = () => {
-  const data = document.getElementById("dataEntry").value;
-  if (data === "null") {
-    document.getElementById("display-type").innerHTML = "null";
-  }
-  else if (data === "true") {
-    document.getElementById("display-type").innerHTML = "boolean";
-  }
-  else if (data === "false") {
-    document.getElementById("display-type").innerHTML = "boolean";
-  }
-  else if (data === ""){
-    document.getElementById("display-type").innerHTML = "undefined";
-  }
-  else if (data <= Number.MAX_VALUE){
-    document.getElementById("display-type").innerHTML = "number";
-  }else {
-    document.getElementById("display-type").innerHTML = "NaN, " + typeof data;
-  }
+  
+  const dataType = () => 
+  {
+    let data = false;
 
-}
-
+    if (data === null) 
+    {
+      document.getElementById("display-type").innerHTML = "null";
+    }
+    else if (data === true || data === false) 
+    {
+      document.getElementById("display-type").innerHTML = "boolean";
+    }
+    else if (data === "")
+    {
+      document.getElementById("display-type").innerHTML = "undefined";
+    }
+    else if (data === parseInt(data, 10))
+    {
+      document.getElementById("display-type").innerHTML = "number";
+    }
+    else if (data === data.toString())
+    {
+      document.getElementById("display-type").innerHTML = "string";
+    }
+    else
+    {
+      document.getElementById("display-type").innerHTML = "NaN";
+    }
+  }
   
 
   
 // Write a JavaScript program that adds 2 numbers together.
 const displayAddition = () => {
-  var num1;
-  var num2;
-  var numt = (num1 + num2);
+  let num1 = 1;
+  let num2 = 3;
+  let numt = (num1 + num2);
 
-  document.getElementById("display-Addition").innerHTML = numt;
+  document.getElementById("display-addition").innerHTML = numt;
   
 }
 
 
 // Write a JavaScript program that runs only when 2 things are true.
 const display2True = () => {
-  var num1 = 5;
-  var num2 = 10;
+  let num1 = 5;
+  let num2 = 10;
+  let numt = num1 + num2;
   
-  if(num1 >= 4)
+  if(num1 >= 1 && num2 >= 1)
   {
-    if(num2 >= 9)
-    {
-      //run
-    }
+    document.getElementById("display-2true").innerHTML = numt;
   }
 }
 
@@ -92,11 +98,12 @@ const display2True = () => {
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
 const display1of2 = () => {
-  var num1 = 1;
-  var num2 = 2;
-  if(num1 == 1 OR num2 == 2)
+  let num1 = 1;
+  let num2 = 2;
+  let numt = num1 + num2;
+  if(num1 == 1 || num2 == 2)
   {
-    //run
+    document.getElementById("display-1of2").innerHTML = numt;
   }
 }
 
